@@ -69,7 +69,7 @@ expense-flow
 2. Create a database:
 
 ```
-expense_manager
+CREATE DATABASE expense_manager;
 ```
 
 3. Run the SQL script:
@@ -92,21 +92,43 @@ private static final String PASSWORD = "your_password";
 
 ## Running the Application
 
-Run the application from:
+Run the application using:
 
 ```
 Main.java
 ```
 
-Example console menu:
+---
+
+## Example Console Interaction
 
 ```
 1. Add Expense
 2. View Expenses
-3. Delete Expense
-4. Update Expense
+3. Update Expense
+4. Delete Expense
 5. Monthly Summary
 6. Exit
+
+Choose option: 1
+Enter amount: 250
+Enter category: Food
+Enter description: Lunch
+Expense saved successfully!
+
+Choose option: 1
+Enter amount: 1200
+Enter category: Transport
+Enter description: Bus Pass
+Expense saved successfully!
+
+Choose option: 2
+ID: 1 | Amount: 250 | Category: Food | Description: Lunch | Date: 2026-03-12
+ID: 2 | Amount: 1200 | Category: Transport | Description: Bus Pass | Date: 2026-03-12
+
+Choose option: 5
+Monthly Expense Summary
+Total Expenses: 1450
 ```
 
 ---

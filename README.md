@@ -1,107 +1,84 @@
 # ExpenseFlow
 
-ExpenseFlow is a backend expense management system built using **Java, JDBC, and MySQL**.  
-The application allows users to add, view, update, and delete expenses while storing data in a relational database.
-
-This project demonstrates **CRUD operations, database connectivity using JDBC, and SQL aggregation queries**.
+ExpenseFlow is a console-based expense management system built using **Java, JDBC, and MySQL**.
+It allows users to manage expenses by performing CRUD operations and storing the data in a MySQL database.
 
 ---
 
 ## Tech Stack
 
-- Java
-- JDBC
-- MySQL
+* Java
+* JDBC
+* MySQL
 
 ---
 
 ## Features
 
-- Add Expense
-- View Expenses
-- Update Expense
-- Delete Expense
-- Monthly Expense Summary
-
----
-
-## Architecture
-
-User Input (Console)  
-⬇  
-Main.java (Application Entry Point)  
-⬇  
-ExpenseService.java (Business Logic Layer)  
-⬇  
-JDBC  
-⬇  
-MySQL Database  
+* Add Expense
+* View Expenses
+* Update Expense
+* Delete Expense
+* Monthly Expense Summary
 
 ---
 
 ## Project Structure
 
-
+```
 expense-flow
+│
 ├── src
-│ ├── DBConnection.java
-│ ├── Expense.java
-│ ├── ExpenseService.java
-│ └── Main.java
+│   ├── DBConnection.java
+│   ├── Expense.java
+│   ├── ExpenseService.java
+│   └── Main.java
+│
 ├── database
-│ └── schema.sql
+│   └── schema.sql
+│
 └── README.md
-
+```
 
 ---
 
-## Database Design
+## Database Schema
 
-### users table
+### Users Table
 
-| Column | Type | Description |
-|------|------|-------------|
-| user_id | INT | Primary Key |
+| Column  | Type              |
+| ------- | ----------------- |
+| user_id | INT (Primary Key) |
 
-### expenses table
+### Expenses Table
 
-| Column | Type | Description |
-|------|------|-------------|
-| expense_id | INT | Primary Key |
-| user_id | INT | Foreign Key referencing users |
-| amount | DOUBLE | Expense amount |
-| category | VARCHAR | Expense category |
-| description | VARCHAR | Description of expense |
-| expense_date | DATE | Date of expense |
+| Column       | Type              |
+| ------------ | ----------------- |
+| expense_id   | INT (Primary Key) |
+| user_id      | INT (Foreign Key) |
+| amount       | DOUBLE            |
+| category     | VARCHAR           |
+| description  | VARCHAR           |
+| expense_date | DATE              |
 
 ---
 
 ## Database Setup
 
-Run the SQL script located in:
-
-
-database/schema.sql
-
-
-This will create the required tables.
-
----
-
-## How to Run
-
 1. Install MySQL
-2. Create a database named:
+2. Create a database:
 
-
+```
 expense_manager
+```
 
+3. Run the SQL script:
 
-3. Update database credentials in:
+```
+database/schema.sql
+```
 
-
-DBConnection.java
-
+4. Update database credentials in **DBConnection.java**
 
 Example:
 
@@ -109,32 +86,31 @@ Example:
 private static final String URL = "jdbc:mysql://localhost:3306/expense_manager";
 private static final String USER = "root";
 private static final String PASSWORD = "your_password";
+```
 
-Run the application:
+---
 
+## Running the Application
+
+Run the application from:
+
+```
 Main.java
-Demo
+```
 
-Example console interaction:
+Example console menu:
 
+```
 1. Add Expense
 2. View Expenses
 3. Delete Expense
 4. Update Expense
 5. Monthly Summary
 6. Exit
+```
 
-Choose option: 1
+---
 
-Enter amount: 250
-Enter category: Food
-Enter description: Lunch
-
-Expense saved to database!
-
-Choose option: 2
-
-ID: 1 | Amount: 250 | Category: Food | Description: Lunch | Date: 2026-03-12
-Author
+## Author
 
 Harsh Yadav

@@ -130,7 +130,13 @@ Choose option: 5
 Monthly Expense Summary
 Total Expenses: 1450
 ```
+## Future Improvements
 
+- User authentication system
+- Web interface using Spring Boot
+- REST API support
+- Expense analytics and charts
+- Docker containerization
 ---
 
 ## Author
